@@ -164,15 +164,20 @@ WHERE p.RecordRank = 1
   AND p.ApplicationStatus NOT IN ('Submitted', 'Enrolled')`;
 
 export const ampscriptSample = `%%[
-VAR @firstName, @programName
+VAR @firstName, @programName, @language, @registered, @cta
 SET @firstName = AttributeValue("FirstName")
 SET @programName = AttributeValue("ProgramName")
+SET @language = Lowercase(AttributeValue("PreferredLanguage"))
+SET @registered = AttributeValue("EventRegistered")
 
 IF Empty(@firstName) THEN
-  SET @firstName = "there"
+  SET @firstName = IIF(@language == "fr", "bonjour", "there")
 ENDIF
 
 IF Empty(@programName) THEN
   SET @programName = "your selected program"
 ENDIF
+
+SET @cta = IIF(@registered == "True",
+  "View my registration", "Reserve my spot")
 ]%%`;

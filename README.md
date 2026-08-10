@@ -2,13 +2,11 @@
 
 **Personal portfolio project by Pek Chansatit**
 
-An interactive, GitHub-ready demonstration of the logic behind a consent-aware postsecondary student-recruitment journey: source data, SQL segmentation, data-quality gates, lifecycle transitions, personalized email content, and funnel measurement.
-
-**Live demo:** [sfmc-student-journey.pekkychan.chatgpt.site](https://sfmc-student-journey.pekkychan.chatgpt.site)
+An interactive, GitHub-ready demonstration of the logic behind a consent-aware postsecondary student-recruitment journey: source data, SQL segmentation, data-quality gates, lifecycle transitions, AMPscript personalization, and funnel measurement.
 
 > This is an independent simulation built with synthetic data. It is **not a production Seneca Polytechnic implementation**, is not connected to Salesforce, and does not claim production SFMC experience.
 
-## What the working demo includes
+## What the working project includes
 
 - A recruitment-funnel dashboard calculated from 24 synthetic records.
 - A five-stage journey: Prospect → Engaged → Event Registrant → Applicant → Enrolled.
@@ -16,7 +14,7 @@ An interactive, GitHub-ready demonstration of the logic behind a consent-aware p
 - Eligibility rules that prioritize stable identity, consent, data quality, active interest, and CRM application status.
 - A SQL workbench showing a Marketing Cloud Engagement Query Activity concept.
 - A filterable data-extension output preview.
-- An AMPscript-style email preview with first-name and program-name fallbacks.
+- An AMPscript email implementation and browser preview with first-name and program-name fallbacks.
 - English/French content variation and a CTA that changes after event registration.
 - Data-quality and recruitment-outcome measurement in one dashboard.
 
@@ -44,7 +42,22 @@ The CRM/institutional system remains the source of truth. Engagement influences 
 | `sql/03_engagement_metrics.sql` | Email data-view aggregation concept |
 | `email/program-event-invite.html` | AMPscript personalization and compliant footer pattern |
 | `docs/implementation-map.md` | Mapping from repository behavior to SFMC responsibilities |
+| `docs/technical-documentation.md` | Detailed architecture, data model, rules, testing, limitations, and production mapping |
 | `tests/portfolio-data.test.mjs` | Automated checks for data, controls, and transparency |
+| `SETUP.md` | Cross-platform local setup, validation, troubleshooting, and GitHub publishing guide |
+
+## AMPscript evidence
+
+The standalone [`email/program-event-invite.html`](email/program-event-invite.html) asset demonstrates:
+
+- `AttributeValue()` access to sendable data-extension attributes;
+- `Empty()` checks and safe personalization fallbacks;
+- English/French content branching;
+- a registration-aware CTA branch;
+- `CloudPagesURL()` and `RedirectTo()` link handling; and
+- sender identity and unsubscribe personalization strings.
+
+The browser simulator renders equivalent logic so reviewers can change the selected contact and inspect the resulting content. The source is illustrative and should be validated in an SFMC business unit before production use.
 
 ## Run locally
 
@@ -56,6 +69,8 @@ npm run dev
 ```
 
 Then open the local URL printed by the development server.
+
+For Windows, macOS, Linux, testing, and GitHub publishing instructions, see [SETUP.md](SETUP.md).
 
 ## Validate
 

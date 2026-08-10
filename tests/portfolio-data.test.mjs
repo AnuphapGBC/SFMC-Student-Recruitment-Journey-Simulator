@@ -21,6 +21,18 @@ test("entry SQL includes identity, consent, quality, and lifecycle gates", async
   assert.match(sql, /NOT IN \('Submitted', 'Enrolled'\)/);
 });
 
+test("AMPscript email includes personalization, branching, tracking, and compliance", async () => {
+  const email = await readFile(new URL("email/program-event-invite.html", root), "utf8");
+  assert.match(email, /AttributeValue\("FirstName"\)/);
+  assert.match(email, /Empty\(@firstName\)/);
+  assert.match(email, /PreferredLanguage/);
+  assert.match(email, /EventRegistered/);
+  assert.match(email, /CloudPagesURL\(/);
+  assert.match(email, /RedirectTo\(@ctaUrl\)/);
+  assert.match(email, /%%member_busname%%/);
+  assert.match(email, /%%unsub_center_url%%/);
+});
+
 test("README is transparent about simulator scope", async () => {
   const readme = await readFile(new URL("README.md", root), "utf8");
   assert.match(readme, /personal portfolio project/i);

@@ -1,30 +1,60 @@
 %%[
-VAR @firstName, @programName, @eventRegistered, @ctaLabel
+VAR @firstName, @programName, @preferredLanguage, @eventRegistered
+VAR @greeting, @introCopy, @ctaLabel, @ctaUrl
 SET @firstName = AttributeValue("FirstName")
 SET @programName = AttributeValue("ProgramName")
+SET @preferredLanguage = Lowercase(AttributeValue("PreferredLanguage"))
 SET @eventRegistered = AttributeValue("EventRegistered")
 
+IF Empty(@preferredLanguage) THEN
+  SET @preferredLanguage = "en"
+ENDIF
+
 IF Empty(@firstName) THEN
-  SET @firstName = "there"
+  IF @preferredLanguage == "fr" THEN
+    SET @firstName = "bonjour"
+  ELSE
+    SET @firstName = "there"
+  ENDIF
 ENDIF
 
 IF Empty(@programName) THEN
-  SET @programName = "your selected program"
+  IF @preferredLanguage == "fr" THEN
+    SET @programName = "le programme sélectionné"
+  ELSE
+    SET @programName = "your selected program"
+  ENDIF
 ENDIF
 
-IF @eventRegistered == "True" THEN
-  SET @ctaLabel = "View your registration details"
+IF @preferredLanguage == "fr" THEN
+  SET @greeting = Concat("Bonjour ", @firstName, ",")
+  SET @introCopy = Concat("Vous avez manifesté votre intérêt pour ", @programName, ". Participez à notre séance d’information pour rencontrer l’équipe du programme.")
 ELSE
-  SET @ctaLabel = "Reserve my spot"
+  SET @greeting = Concat("Hi ", @firstName, ",")
+  SET @introCopy = Concat("You showed interest in ", @programName, ". Join our information session to meet the program team and get your questions answered.")
 ENDIF
+
+IF @eventRegistered == "True" OR @eventRegistered == "1" THEN
+  IF @preferredLanguage == "fr" THEN
+    SET @ctaLabel = "Voir les détails de mon inscription"
+  ELSE
+    SET @ctaLabel = "View my registration details"
+  ENDIF
+ELSE
+  IF @preferredLanguage == "fr" THEN
+    SET @ctaLabel = "Réserver ma place"
+  ELSE
+    SET @ctaLabel = "Reserve my spot"
+  ENDIF
+ENDIF
+
+/* Replace 12345 with the published CloudPage ID in an SFMC business unit. */
+SET @ctaUrl = CloudPagesURL(12345, "contactKey", _subscriberkey, "programCode", AttributeValue("ProgramCode"))
 ]%%
 
-<h1>Hi %%=v(@firstName)=%%,</h1>
-<p>
-  You showed interest in %%=v(@programName)=%%. Join our information
-  session to meet the program team and get your questions answered.
-</p>
-<p><a href="https://example.edu/events">%%=v(@ctaLabel)=%%</a></p>
+<h1>%%=v(@greeting)=%%</h1>
+<p>%%=v(@introCopy)=%%</p>
+<p><a href="%%=RedirectTo(@ctaUrl)=%%">%%=v(@ctaLabel)=%%</a></p>
 
 <hr>
 <small>
