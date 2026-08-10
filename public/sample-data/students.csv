@@ -1,0 +1,25 @@
+RecordId,ContactKey,FirstName,LastName,EmailAddress,ProgramCode,ProgramName,Intake,Campus,StudentType,PreferredLanguage,Stage,ConsentStatus,ActiveInterest,ApplicationStatus,EmailValid,EventRegistered,LastEngagementDate,ModifiedDate
+R001,C-1001,Maya,Chen,maya.chen@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,English,Engaged,OptedIn,1,NotStarted,1,1,2026-08-08,2026-08-08T14:10:00Z
+R002,C-1002,Liam,Patel,liam.patel@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,International,English,Prospect,OptedIn,1,NotStarted,1,0,2026-08-06,2026-08-06T17:25:00Z
+R003,C-1003,Sophie,Nguyen,sophie.nguyen@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,French,Engaged,OptedIn,1,NotStarted,1,1,2026-08-07,2026-08-07T12:15:00Z
+R004,C-1004,Noah,Williams,noah.williams@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,International,English,Prospect,OptedIn,1,NotStarted,1,0,2026-08-03,2026-08-03T09:42:00Z
+R005,C-1005,Ava,Martin,ava.martin@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,French,EventRegistrant,OptedIn,1,NotStarted,1,1,2026-08-08,2026-08-08T16:20:00Z
+R006,C-1006,Ethan,Garcia,ethan.garcia@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,English,Applicant,OptedIn,1,Submitted,1,1,2026-08-08,2026-08-05T11:30:00Z
+R007,C-1007,Emma,Wilson,emma.wilson@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,English,Enrolled,OptedIn,1,Enrolled,1,1,2026-08-08,2026-08-01T10:05:00Z
+R008,C-1008,Lucas,Brown,lucas.brown@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,English,Prospect,OptedOut,1,NotStarted,1,0,2026-07-30,2026-07-30T08:20:00Z
+R009,C-1009,Olivia,Davis,olivia.davis@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,English,Prospect,OptedIn,0,NotStarted,1,0,2026-06-12,2026-06-12T13:00:00Z
+R010,,Amelia,Thompson,amelia.thompson@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,English,Prospect,OptedIn,1,NotStarted,1,0,2026-08-08,2026-08-08T15:45:00Z
+R011,C-1011,Henry,Lee,henry.lee.example.ca,CPP,Computer Programming,2027-WINTER,Newnham,International,English,Prospect,OptedIn,1,NotStarted,0,0,2026-08-08,2026-08-07T09:10:00Z
+R012,C-1012,Mia,Clark,mia.clark@example.ca,CPP,Computer Programming,2027-FALL,Newnham,Domestic,English,Engaged,OptedIn,1,NotStarted,1,0,2026-08-08,2026-08-04T18:05:00Z
+R013,C-1013,Jackson,King,jackson.king@example.ca,BAI,Business Analytics,2027-WINTER,Newnham,International,English,Applicant,OptedIn,1,InProgress,1,1,2026-08-08,2026-08-06T14:55:00Z
+R014,C-1014,Isla,Scott,isla.scott@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,International,English,EventRegistrant,OptedIn,1,NotStarted,1,1,2026-08-09,2026-08-09T07:30:00Z
+R015,C-1015,,Moore,james.moore@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,English,Prospect,OptedIn,1,NotStarted,1,0,2026-08-08,2026-08-02T16:10:00Z
+R016,C-1016,Charlotte,White,charlotte.white@example.ca,CPP,,2027-WINTER,Newnham,Domestic,French,Engaged,OptedIn,1,NotStarted,1,0,2026-08-08,2026-08-07T20:45:00Z
+R017,C-1017,Benjamin,Harris,benjamin.harris@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,International,English,Engaged,OptedIn,1,NotStarted,1,0,2026-08-09,2026-08-09T08:02:00Z
+R018,C-1018,Harper,Lewis,harper.lewis@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,English,Applicant,OptedIn,1,InProgress,1,1,2026-08-08,2026-08-08T19:40:00Z
+R019,C-1019,Mason,Walker,mason.walker@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,English,Prospect,OptedIn,1,NotStarted,1,0,2026-08-08,2026-08-05T09:00:00Z
+R020,C-1019,Mason,Walker,mason.walker+old@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,English,Prospect,OptedIn,1,NotStarted,1,0,2026-07-11,2026-07-11T09:00:00Z
+R021,C-1021,Evelyn,Young,evelyn.young@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,International,English,EventRegistrant,OptedIn,1,NotStarted,1,1,2026-08-09,2026-08-09T08:15:00Z
+R022,C-1022,Alexandre,Allen,alexandre.allen@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,International,French,Prospect,Unknown,1,NotStarted,1,0,2026-08-08,2026-08-08T10:20:00Z
+R023,C-1023,Ella,Wright,ella.wright@example.ca,UXD,Interactive Design,2027-WINTER,Seneca@York,Domestic,English,Applicant,OptedIn,1,Submitted,1,0,2026-08-08,2026-08-06T12:00:00Z
+R024,C-1024,Daniel,Hernandez,daniel.hernandez@example.ca,CPP,Computer Programming,2027-WINTER,Newnham,Domestic,English,Engaged,OptedIn,1,NotStarted,0,0,2026-08-08,2026-08-04T07:30:00Z

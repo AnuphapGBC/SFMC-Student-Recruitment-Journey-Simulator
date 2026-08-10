@@ -1,0 +1,33 @@
+%%[
+VAR @firstName, @programName, @eventRegistered, @ctaLabel
+SET @firstName = AttributeValue("FirstName")
+SET @programName = AttributeValue("ProgramName")
+SET @eventRegistered = AttributeValue("EventRegistered")
+
+IF Empty(@firstName) THEN
+  SET @firstName = "there"
+ENDIF
+
+IF Empty(@programName) THEN
+  SET @programName = "your selected program"
+ENDIF
+
+IF @eventRegistered == "True" THEN
+  SET @ctaLabel = "View your registration details"
+ELSE
+  SET @ctaLabel = "Reserve my spot"
+ENDIF
+]%%
+
+<h1>Hi %%=v(@firstName)=%%,</h1>
+<p>
+  You showed interest in %%=v(@programName)=%%. Join our information
+  session to meet the program team and get your questions answered.
+</p>
+<p><a href="https://example.edu/events">%%=v(@ctaLabel)=%%</a></p>
+
+<hr>
+<small>
+  This email was sent by %%member_busname%%, %%member_addr%%.
+  <a href="%%unsub_center_url%%">Unsubscribe</a>
+</small>
