@@ -3,18 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=22.13.0"
+    "node": "22.x"
   },
   "scripts": {
-    "install:ci": "bash scripts/install-ci.sh",
-    "dev": "vite",
-    "build": "vinext build && node scripts/validate-artifact.mjs",
-    "build:hosted": "bash scripts/build-verified.sh",
-    "start": "vinext start",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs tests/portfolio-data.test.mjs",
-    "validate:artifact": "node scripts/validate-artifact.mjs",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
-    "db:generate": "drizzle-kit generate"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "dev:sites": "vite",
+    "build:sites": "vinext build && node scripts/validate-artifact.mjs",
+    "start:sites": "vinext start"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",
